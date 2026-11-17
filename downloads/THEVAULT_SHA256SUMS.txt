@@ -1,0 +1,2 @@
+a9de78727bf2bbee67cbe36f8e50c24e41e1ca8ac5ed96bf1974ffc95be89323 *TheVault-v1.0.0-beta-windows-amd64-installer.exe
+9dbb34205bbd1215128fdcf5c2cdc01d0d55e4eacb4f0d17bf6f709abcd073d9 *TheVault-v1.0.0-beta-windows-amd64-portable.exe
