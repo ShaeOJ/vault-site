@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<title>TheVault — Free Solo &amp; Proxy Bitcoin Mining Software | Underground Roots</title>
-<meta name="description" content="TheVault is a free, open-source Stratum V1 mining app for Bitcoin, Bitcoin Cash, DigiByte &amp; more. Mine solo against your own node or relay to a pool — no fees, no custody. Windows download, Beta v1.0.0.">
-<meta name="keywords" content="bitcoin mining software, solo mining app, stratum server, ASIC mining software, bitaxe mining pool, proxy mining, open source miner, TheVault, GoVault, Underground Roots">
+<title>Underground Roots Software — Mining Tools &amp; More by Shae Jones Thomson</title>
+<meta name="description" content="Free, open-source software built by Shae Jones Thomson. Mining tools: TheVault (solo/proxy Stratum app) and ZombieOS (BitAxe cluster firmware). No accounts, no telemetry, source on GitHub.">
+<meta name="keywords" content="underground roots software, open source mining tools, TheVault, ZombieOS, ClusterAxe, bitcoin mining software, bitaxe firmware">
 <meta name="author" content="Shae Jones Thomson">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://vault.undergroundroots.ca/">
@@ -14,25 +14,25 @@
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Underground Roots Software">
-<meta property="og:title" content="TheVault — Free Solo &amp; Proxy Bitcoin Mining Software">
-<meta property="og:description" content="Point your ASICs at your own node, or relay to an upstream pool. Free, open-source, no fees. Download for Windows — Beta v1.0.0.">
+<meta property="og:title" content="Underground Roots Software — Mining Tools &amp; More">
+<meta property="og:description" content="Free, open-source tools built by Shae Jones Thomson — starting with TheVault (mining app) and ZombieOS (BitAxe cluster firmware).">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://vault.undergroundroots.ca/">
 <meta property="og:image" content="https://vault.undergroundroots.ca/assets/thevault-logo.png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
-<meta property="og:image:alt" content="TheVault app logo">
+<meta property="og:image:alt" content="Underground Roots Software">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TheVault — Free Solo &amp; Proxy Bitcoin Mining Software">
-<meta name="twitter:description" content="Point your ASICs at your own node, or relay to an upstream pool. Free, open-source, no fees. Beta v1.0.0.">
+<meta name="twitter:title" content="Underground Roots Software — Mining Tools &amp; More">
+<meta name="twitter:description" content="Free, open-source tools built by Shae Jones Thomson — TheVault, ZombieOS, and more over time.">
 <meta name="twitter:image" content="https://vault.undergroundroots.ca/assets/thevault-logo.png">
 
 <link rel="icon" type="image/x-icon" href="/assets/thevault-favicon.ico">
 <link rel="apple-touch-icon" href="/assets/thevault-logo.png">
-<link rel="stylesheet" href="/assets/style.css?v=202611162143">
+<link rel="stylesheet" href="/assets/style.css?v=202611182300">
 
 <script type="application/ld+json">
 {
@@ -43,7 +43,7 @@
       "@id": "https://vault.undergroundroots.ca/#website",
       "url": "https://vault.undergroundroots.ca/",
       "name": "Underground Roots Software",
-      "description": "Free, open-source desktop software built by Shae Jones Thomson.",
+      "description": "Free, open-source desktop software and firmware built by Shae Jones Thomson.",
       "publisher": { "@id": "https://vault.undergroundroots.ca/#person" }
     },
     {
@@ -53,27 +53,16 @@
       "url": "https://github.com/ShaeOJ"
     },
     {
-      "@type": "SoftwareApplication",
-      "name": "TheVault",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Windows, Linux, macOS",
-      "softwareVersion": "1.0.0-beta",
-      "description": "A free, open-source Stratum V1 mining server for solo or proxy Bitcoin-family mining. Point your ASICs at your own full node, or relay them to an upstream pool.",
-      "url": "https://vault.undergroundroots.ca/#downloads",
-      "downloadUrl": "https://vault.undergroundroots.ca/downloads/TheVault-v1.0.0-beta-windows-amd64-installer.exe",
-      "image": "https://vault.undergroundroots.ca/assets/thevault-logo.png",
-      "author": { "@id": "https://vault.undergroundroots.ca/#person" },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+      "@type": "ItemList",
+      "itemListElement": [
+        { "@type": "SoftwareApplication", "position": 1, "name": "TheVault", "url": "https://vault.undergroundroots.ca/thevault.html", "applicationCategory": "UtilitiesApplication" },
+        { "@type": "SoftwareApplication", "position": 2, "name": "ZombieOS", "url": "https://vault.undergroundroots.ca/zombieos.html", "applicationCategory": "UtilitiesApplication" }
+      ]
     }
   ]
 }
 </script>
 <style>
-  /* ── Software-hub additions (app cards, version badges, platform pills) ── */
   .app-card {
     display: grid; grid-template-columns: auto 1fr; gap: 20px;
     background: rgba(21,26,15,.78); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
@@ -91,16 +80,18 @@
   .app-tagline { color: var(--muted); font-size: 14.5px; margin: 0 0 14px; }
   .app-dl { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
   .app-meta { font-size: 12.5px; color: var(--muted); }
-  .app-meta code { font-size: 11.5px; }
   .more-soon { text-align: center; color: var(--muted); font-size: 14px; padding: 30px 20px;
     border: 1px dashed var(--line); border-radius: var(--radius); }
-  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; counter-reset: step; }
-  .steps-grid .card { counter-increment: step; position: relative; padding-top: 34px; }
-  .steps-grid .card::before {
-    content: counter(step); position: absolute; top: -12px; left: 18px; width: 28px; height: 28px;
-    border-radius: 50%; background: var(--amber); color: #1a1400; font: 700 14px/28px var(--mono);
-    text-align: center;
-  }
+  .cat-label { font: 700 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+    color: var(--amber); margin: 0 0 14px; display: flex; align-items: center; gap: 10px; }
+  .cat-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .quick-dl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .quick-dl { display: block; background: rgba(21,26,15,.78); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; color: var(--fg); }
+  .quick-dl:hover { border-color: var(--amber); text-decoration: none; transform: translateY(-2px); }
+  .quick-dl .qd-app { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
+  .quick-dl h3 { margin: 0 0 4px; color: var(--amber); font-size: 16px; }
+  .quick-dl p { margin: 0; font-size: 13px; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -111,10 +102,9 @@
   <a class="brand" href="#top"><img src="/assets/thevault-logo.png" alt="" width="34" height="34"><span>UNDERGROUND ROOTS</span></a>
   <nav>
     <a href="#about">About</a>
-    <a href="#howto">How it works</a>
-    <a href="#features">Features</a>
+    <a href="#software">Software</a>
+    <a href="#mining-tools">Mining Tools</a>
     <a href="#downloads">Downloads</a>
-    <a href="/zombieos.html">ZombieOS</a>
     <a class="ext" href="https://github.com/ShaeOJ">GitHub ↗</a>
   </nav>
 </header>
@@ -122,127 +112,109 @@
 <main id="top">
 
   <section class="hero">
-    <img class="hero-logo" src="/assets/thevault-logo.png" alt="TheVault logo" width="200" height="200">
-    <h1>TheVault</h1>
-    <p class="tag">Point your machinery at your own node. Keep the block. Keep the reward.</p>
-    <p class="sub">A free, open-source desktop app for solo or proxy Bitcoin-family mining — no middlemen, no custody, no pool fees unless you want them. This is the first release on Underground Roots Software, a small download hub for the apps I build.</p>
+    <img class="hero-logo" src="/assets/thevault-logo.png" alt="Underground Roots Software" width="160" height="160">
+    <h1>Underground Roots Software</h1>
+    <p class="tag">Free, open-source tools — built by one person, in the open, for fun and for learning.</p>
+    <p class="sub">This is a small download hub for the software I build: desktop apps and firmware, all source-available, no accounts, no telemetry, no catches. Right now that's two mining tools — a desktop Stratum server and a BitAxe cluster firmware — with more landing here over time.</p>
     <div class="cta">
-      <a class="btn primary" href="#downloads">Download — Beta v1.0.0</a>
-      <a class="btn" href="https://asicpool.space">No node? Mine on ASICpool ↗</a>
-      <a class="btn ghost" href="#howto">How it works</a>
+      <a class="btn primary" href="#mining-tools">See what's here</a>
+      <a class="btn" href="#downloads">Jump to downloads</a>
+      <a class="btn ghost" href="https://github.com/ShaeOJ">GitHub ↗</a>
     </div>
-    <p class="honest"><span class="badge badge-beta">BETA</span>&nbsp; v1.0.0 — actively developed, unsigned binaries, verify checksums before running.</p>
   </section>
 
   <section id="about" class="band">
-    <h2><span class="num">01</span> What is TheVault?</h2>
-    <p class="lead">TheVault is a Stratum V1 mining server, packaged as a single native desktop app you can double-click — no Docker, no command line required.</p>
+    <h2><span class="num">01</span> What's here</h2>
+    <p class="lead">Everything on this site is free, open-source, and runs on your own hardware — nothing here is a hosted service or requires an account.</p>
     <div class="pillars">
       <div class="card">
-        <div class="ico">⛏️</div>
-        <h3>Solo mode</h3>
-        <p>Plug it into your own full node (Bitcoin, Bitcoin Cash, DigiByte, Bitcoin SV, Bitcoin Silver, and more) and build every block yourself. Every hash goes toward finding <i>your</i> block, paid straight to your own wallet.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🛰️</div>
-        <h3>Proxy / relay mode</h3>
-        <p>No full node? Forward your whole miner fleet to an upstream pool over one clean connection — ASICpool presets built in — with optional per-miner pass-through for correct individual worker stats.</p>
+        <div class="ico">🔓</div>
+        <h3>Source-available</h3>
+        <p>Every project links straight to its GitHub repo. Read the code, build it yourself, or just grab a pre-built binary — your call.</p>
       </div>
       <div class="card">
         <div class="ico">🏠</div>
         <h3>Built for the home lab</h3>
-        <p>Designed for the small stuff: Bitaxes, NerdMiners, NerdQAxe boards, and the rest of the home-lab fleet — not warehouse-scale operations.</p>
-      </div>
-    </div>
-    <p class="note"><b>Honest by design:</b> TheVault doesn't take a cut of anything. In solo mode the block reward is 100% yours; in proxy mode you're relaying to whatever pool you choose, on whatever terms that pool sets.</p>
-  </section>
-
-  <section id="howto" class="band alt">
-    <h2><span class="num">02</span> How to use it</h2>
-    <p class="lead">Four steps from download to hashing.</p>
-    <div class="steps-grid">
-      <div class="card">
-        <h3>Install</h3>
-        <p>Grab the Windows installer below and run it, or use the portable <code>.exe</code> if you'd rather not install anything. No admin account or dependencies needed beyond Microsoft WebView2 (already on most Windows 10/11 machines).</p>
+        <p>Sized for a single operator running a node, a few ASICs, or a small BitAxe cluster — not warehouse-scale infrastructure.</p>
       </div>
       <div class="card">
-        <h3>Choose a mode</h3>
-        <p>On first launch, pick <b>Solo</b> (point it at your own node's RPC) or <b>Proxy</b> (enter an upstream pool URL — or pick one of the built-in ASICpool presets). Solo mode needs a fully-synced node; proxy mode just needs a pool address.</p>
+        <div class="ico">🧩</div>
+        <h3>Growing over time</h3>
+        <p>Started with mining tools since that's what I'm building right now. More categories of software will land here as they're finished.</p>
       </div>
-      <div class="card">
-        <h3>Point your miners at it</h3>
-        <p>TheVault opens a local stratum port on your LAN. Enter that address into each ASIC's mining-pool field (Bitaxe, NerdAxe, NerdQAxe, etc.) the same way you'd enter any other pool — username/password don't matter, any value works.</p>
-      </div>
-      <div class="card">
-        <h3>Watch the dashboard</h3>
-        <p>The built-in dashboard shows live hashrate, accepted/rejected shares, best share difficulty, and a miner-fleet globe. Closing the window keeps TheVault mining in the background — use the tray icon or the Shutdown button to fully quit.</p>
-      </div>
-    </div>
-    <p class="note"><b>Solo mode tip:</b> run your node with <code>-zmqpubhashblock=tcp://127.0.0.1:28332</code> to enable instant block detection — TheVault pushes fresh work to every miner the moment a block lands instead of waiting on the next RPC poll.</p>
-  </section>
-
-  <section id="features" class="band">
-    <h2><span class="num">03</span> Features</h2>
-    <div class="dl-grid">
-      <div class="dl"><div class="dl-ico">⚡</div><div><h3>Instant block detection</h3><p>Pure-Go ZMQ <code>hashblock</code> subscription with an automatic RPC poll fallback if the link drops.</p></div></div>
-      <div class="dl"><div class="dl-ico">🖥️</div><div><h3>ASIC auto-recognition</h3><p>Miners are identified from their user-agent and shown as <code>4× BM1370</code>, <code>Bitaxe Gamma</code>, etc. in the fleet view.</p></div></div>
-      <div class="dl"><div class="dl-ico">📡</div><div><h3>LAN auto-discovery</h3><p>Finds AxeOS miners on your network automatically, with power/thermal telemetry.</p></div></div>
-      <div class="dl"><div class="dl-ico">🎚️</div><div><h3>Variable difficulty</h3><p>Auto-tunes per miner across the full home range — from a tiny NerdMiner up to a stack of big ASICs.</p></div></div>
-      <div class="dl"><div class="dl-ico">📊</div><div><h3>Live dashboard</h3><p>Real-time hashrate + shares/sec charts, best-share tracking, share counters, and network stats.</p></div></div>
-      <div class="dl"><div class="dl-ico">🎨</div><div><h3>Multiple themes</h3><p>Several accent-color cathode themes to pick from, all applied live across the whole app.</p></div></div>
-      <div class="dl"><div class="dl-ico">💾</div><div><h3>Portable by design</h3><p>Config, database, and logs all live in a <code>data/</code> folder next to the exe. Copy the folder, take your setup with you.</p></div></div>
-      <div class="dl"><div class="dl-ico">🔄</div><div><h3>In-app updater</h3><p>Checks for new releases and can update itself in place.</p></div></div>
     </div>
   </section>
 
-  <section id="downloads" class="band alt">
-    <h2><span class="num">04</span> Downloads</h2>
-    <p class="lead">Free and open-source. Full desktop GUI on Windows and Linux; macOS runs the same core headless (dashboard over your browser) while the native Mac build is sorted out.</p>
+  <section id="software" class="band alt">
+    <h2><span class="num">02</span> Software</h2>
+    <p class="lead">Organized by category. Each card links to a dedicated page with full details, features, and downloads.</p>
 
-    <div class="app-card">
-      <img class="app-logo" src="/assets/thevault-logo.png" alt="">
-      <div>
-        <div class="app-head">
-          <h3>TheVault</h3>
-          <span class="badge badge-beta">Beta v1.0.0</span>
-          <span class="badge badge-plat">Windows</span>
-          <span class="badge badge-plat">Linux (ARM64)</span>
-          <span class="badge badge-soon">macOS — headless only</span>
+    <div id="mining-tools">
+      <p class="cat-label">Mining Tools</p>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="app-card">
+          <img class="app-logo" src="/assets/thevault-logo.png" alt="">
+          <div>
+            <div class="app-head">
+              <h3>TheVault</h3>
+              <span class="badge badge-beta">Beta v1.0.0</span>
+              <span class="badge badge-plat">Desktop App</span>
+            </div>
+            <p class="app-tagline">Stratum V1 solo/proxy mining app for Bitcoin-family coins. Point your ASICs at your own node, or relay them to an upstream pool — your choice, no fees unless you want them.</p>
+            <div class="app-dl">
+              <a class="btn primary" href="/thevault.html">Learn more &amp; download ↗</a>
+              <a class="btn ghost" href="https://github.com/ShaeOJ/GoVault">Source code ↗</a>
+            </div>
+          </div>
         </div>
-        <p class="app-tagline">Stratum V1 solo/proxy mining app. Point your ASICs at your own node, or relay them to an upstream pool — your choice.</p>
-        <div class="app-dl">
-          <a class="btn primary" href="/downloads/TheVault-v1.0.0-beta-windows-amd64-installer.exe">Windows Installer (.exe)</a>
-          <a class="btn" href="/downloads/TheVault-v1.0.0-beta-windows-amd64-portable.exe">Windows Portable (.exe)</a>
-          <a class="btn" href="/downloads/TheVault-v1.0.0-beta-linux-arm64">Linux ARM64 (Raspberry Pi, etc.)</a>
-          <a class="btn ghost" href="https://github.com/ShaeOJ/GoVault">Source code ↗</a>
-        </div>
-        <div class="app-dl" style="margin-top:10px;">
-          <a class="btn" href="/downloads/TheVault-v1.0.0-beta-headless-macos-amd64">macOS Intel — headless</a>
-          <a class="btn" href="/downloads/TheVault-v1.0.0-beta-headless-macos-arm64">macOS Apple Silicon — headless</a>
-        </div>
-        <p class="app-meta">The macOS native desktop build currently fails in CI (a Wails/Xcode linker conflict) — the headless builds above run the identical mining core and dashboard, just served over HTTP to your browser instead of a native window, until that's fixed. SHA-256 checksums in <a href="/downloads/THEVAULT_SHA256SUMS.txt">THEVAULT_SHA256SUMS.txt</a> — verify before running. Unsigned binaries: Windows SmartScreen / macOS Gatekeeper will warn on first run.</p>
-      </div>
-    </div>
 
-    <div class="app-card" style="margin-top:16px;">
-      <img class="app-logo" src="/assets/zombieos-logo.png" alt="" style="width:64px; height:auto; object-fit:contain;">
-      <div>
-        <div class="app-head">
-          <h3>ZombieOS <span class="muted" style="font-size:13px; font-weight:400;">(formerly ClusterAxe)</span></h3>
-          <span class="badge badge-beta">v1.0.0</span>
-          <span class="badge badge-plat">ESP32-S3 · BitAxe</span>
-        </div>
-        <p class="app-tagline">Open-source firmware that clusters multiple BitAxe miners behind one pool connection — zero duplicate work, unified dashboard, safe overclock tuner.</p>
-        <div class="app-dl">
-          <a class="btn primary" href="/zombieos.html">View &amp; download ↗</a>
-          <a class="btn ghost" href="https://github.com/ShaeOJ/ClusterAxe">Source code ↗</a>
+        <div class="app-card">
+          <img class="app-logo" src="/assets/zombieos-logo.png" alt="" style="width:64px; height:auto; object-fit:contain;">
+          <div>
+            <div class="app-head">
+              <h3>ZombieOS <span class="muted" style="font-size:13px; font-weight:400;">(formerly ClusterAxe)</span></h3>
+              <span class="badge badge-beta">v1.0.0</span>
+              <span class="badge badge-plat">ESP32-S3 Firmware</span>
+            </div>
+            <p class="app-tagline">Open-source firmware that clusters multiple BitAxe miners behind one pool connection — zero duplicate work, unified dashboard, safe overclock tuner even standalone devices benefit from.</p>
+            <div class="app-dl">
+              <a class="btn primary" href="/zombieos.html">Learn more &amp; download ↗</a>
+              <a class="btn ghost" href="https://github.com/ShaeOJ/ClusterAxe">Source code ↗</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="more-soon" style="margin-top:16px;">More software lands here over time — check back, or watch the GitHub.</div>
+    <div class="more-soon" style="margin-top:20px;">More categories land here over time — check back, or watch the GitHub.</div>
+  </section>
 
-    <p class="note"><b>Verifying a download:</b> on Windows, run <code>certutil -hashfile TheVault-v1.0.0-beta-windows-amd64-installer.exe SHA256</code> and compare the output against <code>THEVAULT_SHA256SUMS.txt</code>.</p>
+  <section id="downloads" class="band">
+    <h2><span class="num">03</span> Downloads</h2>
+    <p class="lead">Fast path to the most common build of each. Full platform lists, checksums, and docs live on each project's own page.</p>
+    <div class="quick-dl-grid">
+      <a class="quick-dl" href="/downloads/TheVault-v1.0.0-beta-windows-amd64-installer.exe">
+        <div class="qd-app">TheVault · Beta v1.0.0</div>
+        <h3>Windows Installer</h3>
+        <p>Most common — double-click, run, done.</p>
+      </a>
+      <a class="quick-dl" href="/downloads/TheVault-v1.0.0-beta-linux-arm64">
+        <div class="qd-app">TheVault · Beta v1.0.0</div>
+        <h3>Linux ARM64</h3>
+        <p>Raspberry Pi and similar SBCs.</p>
+      </a>
+      <a class="quick-dl" href="https://github.com/ShaeOJ/ClusterAxe/releases/download/ZombieOS-v1.0.0/clusteraxe-gamma601-standalone.bin">
+        <div class="qd-app">ZombieOS · v1.0.0</div>
+        <h3>Gamma601 Standalone</h3>
+        <p>Single BM1370 BitAxe, running solo.</p>
+      </a>
+      <a class="quick-dl" href="https://github.com/ShaeOJ/ClusterAxe/releases/download/ZombieOS-v1.0.0/clusteraxe-gt801-standalone.bin">
+        <div class="qd-app">ZombieOS · v1.0.0</div>
+        <h3>GammaTurbo (GT801) Standalone</h3>
+        <p>Dual-chip BitAxe board, running solo.</p>
+      </a>
+    </div>
+    <p class="note" style="margin-top:20px;">Need a different platform, role (master/slave), or portable build? Every option — plus SHA-256 checksums — is on each project's own page: <a href="/thevault.html">TheVault ↗</a> · <a href="/zombieos.html">ZombieOS ↗</a>.</p>
   </section>
 
 </main>
@@ -255,9 +227,9 @@
   <p>Underground Roots Software — free, open-source tools built by <a href="https://undergroundroots.ca">undergroundroots</a>.</p>
   <p class="muted" id="visitCount" style="font-size:12px; margin-top:6px;">&bull;</p>
 </footer>
-<script src="/assets/bgfx.js?v=202611162143" defer></script>
-<script src="/assets/beta-notice.js?v=202611162143" defer></script>
-<script src="/assets/asicpool-notice.js?v=202611162143" defer></script>
-<script src="/assets/visit-counter.js?v=202611172238" defer></script>
+<script src="/assets/bgfx.js?v=202611182300" defer></script>
+<script src="/assets/beta-notice.js?v=202611182300" defer></script>
+<script src="/assets/asicpool-notice.js?v=202611182300" defer></script>
+<script src="/assets/visit-counter.js?v=202611182300" defer></script>
 </body>
 </html>
