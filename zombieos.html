@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>ZombieOS (ClusterAxe) — Distributed BitAxe Mining Firmware</title>
+<meta name="description" content="ZombieOS, formerly ClusterAxe: open-source ESP32-S3 firmware that clusters multiple BitAxe miners behind one pool connection — zero duplicate work, a unified dashboard, and a safe overclock tuner standalone firmware doesn't have.">
+<meta name="keywords" content="bitaxe firmware, clusteraxe, zombieos, esp32-s3 mining, bitaxe cluster, gamma turbo, esp-miner fork, open source bitcoin miner firmware">
+<meta name="author" content="Shae Jones Thomson">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://vault.undergroundroots.ca/zombieos.html">
+<meta name="theme-color" content="#0d0f08">
+
+<meta property="og:site_name" content="Underground Roots Software">
+<meta property="og:title" content="ZombieOS — Distributed BitAxe Mining Firmware">
+<meta property="og:description" content="Open-source ESP32-S3 firmware that clusters multiple BitAxe miners behind one pool connection. Zero duplicate work, unified dashboard, safe overclock tuner.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vault.undergroundroots.ca/zombieos.html">
+<meta property="og:image" content="https://vault.undergroundroots.ca/assets/zombieos-logo.png">
+<meta property="og:image:width" content="283">
+<meta property="og:image:height" content="100">
+<meta property="og:image:alt" content="ZombieOS logo">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZombieOS — Distributed BitAxe Mining Firmware">
+<meta name="twitter:description" content="Open-source ESP32-S3 firmware that clusters multiple BitAxe miners behind one pool connection.">
+<meta name="twitter:image" content="https://vault.undergroundroots.ca/assets/zombieos-logo.png">
+
+<link rel="icon" type="image/x-icon" href="/assets/thevault-favicon.ico">
+<link rel="stylesheet" href="/assets/style.css?v=202611172243">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "ZombieOS",
+      "alternateName": "ClusterAxe",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "ESP32-S3",
+      "softwareVersion": "1.0.0",
+      "description": "Open-source ESP32-S3 firmware that clusters multiple BitAxe miners behind one pool connection — zero duplicate work, unified dashboard, safe overclock tuner.",
+      "url": "https://vault.undergroundroots.ca/zombieos.html#downloads",
+      "downloadUrl": "https://github.com/ShaeOJ/ClusterAxe/releases/tag/ZombieOS-v1.0.0",
+      "image": "https://vault.undergroundroots.ca/assets/zombieos-logo.png",
+      "author": { "@type": "Person", "name": "Shae Jones Thomson", "url": "https://github.com/ShaeOJ" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+  ]
+}
+</script>
+<style>
+  .zos-hero-logo { max-width: 360px; width: 80%; height: auto; filter: drop-shadow(0 0 24px rgba(245,166,35,.35)); }
+  .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .board-card { background: rgba(21,26,15,.78); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .board-card h3 { margin: 0 0 6px; color: #fff; font-size: 19px; }
+  .board-card .spec { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+  .role-dl { display: flex; flex-wrap: wrap; gap: 8px; }
+  .role-dl .btn { font-size: 12.5px; padding: 8px 12px; }
+  .badge { display: inline-block; font: 700 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase;
+    padding: 4px 8px; border-radius: 5px; }
+  .badge-beta { color: #1a1400; background: var(--amber); }
+  .warn-note { margin-top: 26px; color: #ffd0bf; font-size: 14px; background: rgba(255,141,107,.08);
+    border-left: 3px solid #ff8d6b; border-radius: 6px; padding: 14px 16px; }
+  .warn-note b { color: #ff8d6b; }
+</style>
+</head>
+<body>
+<canvas id="bgfx" aria-hidden="true"></canvas>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="site-nav">
+  <a class="brand" href="/"><img src="/assets/thevault-logo.png" alt="" width="34" height="34"><span>UNDERGROUND ROOTS</span></a>
+  <nav>
+    <a href="/#downloads">TheVault</a>
+    <a href="#about">About ZombieOS</a>
+    <a href="#hardware">Hardware</a>
+    <a href="#features">Features</a>
+    <a href="#downloads">Downloads</a>
+    <a class="ext" href="https://github.com/ShaeOJ/ClusterAxe">GitHub ↗</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <img class="zos-hero-logo" src="/assets/zombieos-logo.png" alt="ZombieOS logo">
+    <p class="tag">One pool connection. Every BitAxe in your fleet working as one miner.</p>
+    <p class="sub">Open-source ESP32-S3 firmware — a cluster-aware fork of ESP-Miner — that turns multiple BitAxe-family solo miners into a coordinated master/slave swarm: zero duplicate work, one unified dashboard, remote tuning across the whole fleet.</p>
+    <div class="cta">
+      <a class="btn primary" href="#downloads">Download — v1.0.0</a>
+      <a class="btn" href="https://github.com/ShaeOJ/ClusterAxe">Source code ↗</a>
+      <a class="btn ghost" href="#about">How it works</a>
+    </div>
+    <p class="honest"><span class="badge badge-beta">v1.0.0</span>&nbsp; formerly released as ClusterAxe — firmware still reports/ships as <code>clusteraxe-*</code> for OTA compatibility, see note below.</p>
+  </section>
+
+  <section id="about" class="band">
+    <h2><span class="num">01</span> What is ZombieOS?</h2>
+    <p class="lead">Standalone BitAxe firmware (stock ESP-Miner) is great at mining — alone. ZombieOS adds the layer that's missing once you have more than one.</p>
+    <div class="pillars">
+      <div class="card">
+        <div class="ico">🛰️</div>
+        <h3>One master, up to 8 slaves</h3>
+        <p>The master owns the single Stratum connection to your pool, splits work so no two devices ever hash the same range, and aggregates every slave's shares into one cluster total — up to 9 BitAxe units per cluster.</p>
+      </div>
+      <div class="card">
+        <div class="ico">📡</div>
+        <h3>Wireless or wired</h3>
+        <p>ESP-NOW wireless by default — sub-5ms latency, ~200m range, no cabling. Or BAP over RS-485 daisy-chain for ~1200m range and industrial-grade reliability, up to 16 devices.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🧟</div>
+        <h3>Built on ESP-Miner, not from scratch</h3>
+        <p>ZombieOS is a fork of the standard open-source BitAxe firmware — every single-device feature you already know still works. Clustering, the tuner, and the dashboard are layered on top.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="hardware" class="band alt">
+    <h2><span class="num">02</span> Supported hardware</h2>
+    <p class="lead">Pre-built binaries exist today for two boards. <b>Never cross them</b> — 601 and 801 use different voltage domains.</p>
+    <div class="board-grid">
+      <div class="board-card">
+        <h3>Gamma601</h3>
+        <div class="spec">1× BM1370 · ~1.2 TH/s · 5V · up to 40W</div>
+        <p>The standard single-chip BitAxe Gamma board. Runs as standalone, master, or slave.</p>
+      </div>
+      <div class="board-card">
+        <h3>GammaTurbo (GT801)</h3>
+        <div class="spec">2× BM1370 · 12V · ~36W nominal / 60W max</div>
+        <p>The dual-chip Gamma Turbo board. Same three roles — standalone, master, or slave.</p>
+      </div>
+    </div>
+    <p class="note"><b>Known issue:</b> the GT801 <b>master</b> role currently misreports its own local hashrate as 0 H/s in the UI — cluster-wide totals and slave devices are unaffected, this is a display bug on the master's own tile only. Not yet root-caused.</p>
+  </section>
+
+  <section id="features" class="band">
+    <h2><span class="num">03</span> What ZombieOS has that standalone firmware doesn't</h2>
+    <p class="lead">Beyond clustering itself, running ZombieOS gets every device — even a single standalone unit — a better tuner and a sturdier UI than stock.</p>
+    <h3 style="color:var(--green); font-size:16px; margin:20px 0 10px;">Cluster-exclusive</h3>
+    <div class="dl-grid">
+      <div class="dl"><div class="dl-ico">🧩</div><div><h3>Zero duplicate work</h3><p>Per-slave extranonce2 partitioning gives every device its own slice of the search space — no two units ever hash the same range.</p></div></div>
+      <div class="dl"><div class="dl-ico">♻️</div><div><h3>Coinbase ring buffer</h3><p>Each slave keeps 8 fresh, deduplicated coinbases in rotation instead of restarting the ASIC on every ~1s pool rebroadcast — meaningfully more real work per second.</p></div></div>
+      <div class="dl"><div class="dl-ico">📊</div><div><h3>Unified cluster dashboard</h3><p>Per-slave accepted/rejected shares + reject %, nonce range, MAC address, last-seen/last-work timestamps, plus a master summary: power, J/TH efficiency, jobs sent.</p></div></div>
+      <div class="dl"><div class="dl-ico">🎛️</div><div><h3>Real remote control</h3><p>Per-slave restart and identify, and config pushed over ESP-NOW even when a slave has no LAN IP at all — not a silent no-op like some wireless-only setups.</p></div></div>
+      <div class="dl"><div class="dl-ico">🌡️</div><div><h3>Board-aware safety</h3><p>Each slave's undervolt/overheat thresholds are derived from its own reported voltage rail — a 12V GT801 master won't false-throttle a 5V Gamma601 slave.</p></div></div>
+    </div>
+    <h3 style="color:var(--green); font-size:16px; margin:26px 0 10px;">Every device, including standalone</h3>
+    <div class="dl-grid">
+      <div class="dl"><div class="dl-ico">🧪</div><div><h3>Board-aware tuner/benchmark</h3><p>Power budget auto-scales to the detected ASIC count (real 50W/60W oc on the 2-chip GT801 vs 25W/30W on Gamma601), with live hashrate/temp/power/HW-error telemetry.</p></div></div>
+      <div class="dl"><div class="dl-ico">🛡️</div><div><h3>Overclock benchmarks that don't cook the chip</h3><p>Polls temperature every 3s during a run and backs off before the firmware's own overheat cutoff — instead of finding out the hard way.</p></div></div>
+      <div class="dl"><div class="dl-ico">💾</div><div><h3>Settings survive power loss</h3><p>Best-known-good tuner settings persist to NVS mid-run and across reboots — no 35-50 minute recalibration unless you explicitly ask for one.</p></div></div>
+      <div class="dl"><div class="dl-ico">🖥️</div><div><h3>Embedded web UI</h3><p>The UI is compiled directly into the firmware binary — no separate <code>www.bin</code> to flash or lose track of.</p></div></div>
+      <div class="dl"><div class="dl-ico">🏆</div><div><h3>Best-shares scoreboard + live WebSocket telemetry</h3><p>Top-20 best shares, a Block Header card (nonce/diff/version/ntime of your last find), and a live "chance to find a block %" stat.</p></div></div>
+    </div>
+  </section>
+
+  <section id="downloads" class="band alt">
+    <h2><span class="num">04</span> Downloads — ZombieOS v1.0.0</h2>
+    <p class="lead">Pick the file for your exact board <i>and</i> role. Full flashing steps (including esptool offsets) are in <a href="https://github.com/ShaeOJ/ClusterAxe/blob/main/FLASHING.md">FLASHING.md</a> on GitHub.</p>
+
+    <div class="board-grid">
+      <div class="board-card">
+        <h3>Gamma601</h3>
+        <div class="role-dl">
+          <a class="btn primary" href="https://github.com/ShaeOJ/ClusterAxe/releases/download/ZombieOS-v1.0.0/clusteraxe-gamma601-standalone.bin">Standalone</a>
+          <a class="btn" href="https://github.com/ShaeOJ/ClusterAxe/releases/download/ZombieOS-v1.0.0/clusteraxe-gamma601-master.bin">Master</a>
+          <a class="btn" href="https://github.com/ShaeOJ/ClusterAxe/releases/download/ZombieOS-v1.0.0/clusteraxe-gamma601-slave.bin">Slave</a>
+        </div>
+      </div>
+      <div class="board-card">
+        <h3>GammaTurbo (GT801)</h3>
+        <div class="role-dl">
+          <a class="btn primary" href="https://github.com/ShaeOJ/ClusterAxe/releases/download/ZombieOS-v1.0.0/clusteraxe-gt801-standalone.bin">Standalone</a>
+          <a class="btn" href="https://github.com/ShaeOJ/ClusterAxe/releases/download/ZombieOS-v1.0.0/clusteraxe-gt801-master.bin">Master</a>
+          <a class="btn" href="https://github.com/ShaeOJ/ClusterAxe/releases/download/ZombieOS-v1.0.0/clusteraxe-gt801-slave.bin">Slave</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:20px;"><b>First time flashing from stock AxeOS?</b> Rename your chosen file to <code>esp-miner.bin</code> and upload it in AxeOS → Firmware Update. There is no <code>www.bin</code> — the UI is built into the firmware itself.</p>
+
+    <div class="warn-note">
+      <b>Asset names still say "clusteraxe-"</b> — intentional, not a mistake. ZombieOS 1.0 is the rebrand of ClusterAxe; keeping the old filename prefix lets already-flashed devices update over-the-air without breaking their board-safety check. A later release will switch to <code>zombieos-…</code> names. The device itself already reports <code>ZombieOS-v1.0.0</code> on its screen, in the web UI, and at <code>/api/system/info</code>.
+    </div>
+
+    <div class="more-soon" style="margin-top:16px;">Source, build instructions, and the full release history: <a href="https://github.com/ShaeOJ/ClusterAxe">github.com/ShaeOJ/ClusterAxe</a>.</div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-links">
+    <a href="/">Home / TheVault</a>
+    <a href="https://github.com/ShaeOJ/ClusterAxe">GitHub</a>
+    <a href="https://asicpool.space">ASICpool</a>
+  </div>
+  <p>Underground Roots Software — free, open-source tools built by <a href="https://undergroundroots.ca">undergroundroots</a>.</p>
+  <p class="muted" id="visitCount" style="font-size:12px; margin-top:6px;">&bull;</p>
+</footer>
+<script src="/assets/bgfx.js?v=202611172243" defer></script>
+<script src="/assets/visit-counter.js?v=202611172243" defer></script>
+</body>
+</html>
