@@ -56,7 +56,7 @@
       "@type": "SoftwareApplication",
       "name": "TheVault",
       "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Windows",
+      "operatingSystem": "Windows, Linux, macOS",
       "softwareVersion": "1.0.0-beta",
       "description": "A free, open-source Stratum V1 mining server for solo or proxy Bitcoin-family mining. Point your ASICs at your own full node, or relay them to an upstream pool.",
       "url": "https://vault.undergroundroots.ca/#downloads",
@@ -196,7 +196,7 @@
 
   <section id="downloads" class="band alt">
     <h2><span class="num">04</span> Downloads</h2>
-    <p class="lead">Free and open-source. Windows is live today; more platforms land as they're built.</p>
+    <p class="lead">Free and open-source. Full desktop GUI on Windows and Linux; macOS runs the same core headless (dashboard over your browser) while the native Mac build is sorted out.</p>
 
     <div class="app-card">
       <img class="app-logo" src="/assets/thevault-logo.png" alt="">
@@ -205,16 +205,21 @@
           <h3>TheVault</h3>
           <span class="badge badge-beta">Beta v1.0.0</span>
           <span class="badge badge-plat">Windows</span>
-          <span class="badge badge-soon">macOS — planned</span>
-          <span class="badge badge-soon">Linux — planned</span>
+          <span class="badge badge-plat">Linux (ARM64)</span>
+          <span class="badge badge-soon">macOS — headless only</span>
         </div>
         <p class="app-tagline">Stratum V1 solo/proxy mining app. Point your ASICs at your own node, or relay them to an upstream pool — your choice.</p>
         <div class="app-dl">
           <a class="btn primary" href="/downloads/TheVault-v1.0.0-beta-windows-amd64-installer.exe">Windows Installer (.exe)</a>
-          <a class="btn" href="/downloads/TheVault-v1.0.0-beta-windows-amd64-portable.exe">Portable .exe (no install)</a>
+          <a class="btn" href="/downloads/TheVault-v1.0.0-beta-windows-amd64-portable.exe">Windows Portable (.exe)</a>
+          <a class="btn" href="/downloads/TheVault-v1.0.0-beta-linux-arm64">Linux ARM64 (Raspberry Pi, etc.)</a>
           <a class="btn ghost" href="https://github.com/ShaeOJ/GoVault">Source code ↗</a>
         </div>
-        <p class="app-meta">SHA-256 checksums in <a href="/downloads/THEVAULT_SHA256SUMS.txt">THEVAULT_SHA256SUMS.txt</a> — verify before running. Unsigned binary: Windows SmartScreen will warn on first run.</p>
+        <div class="app-dl" style="margin-top:10px;">
+          <a class="btn" href="/downloads/TheVault-v1.0.0-beta-headless-macos-amd64">macOS Intel — headless</a>
+          <a class="btn" href="/downloads/TheVault-v1.0.0-beta-headless-macos-arm64">macOS Apple Silicon — headless</a>
+        </div>
+        <p class="app-meta">The macOS native desktop build currently fails in CI (a Wails/Xcode linker conflict) — the headless builds above run the identical mining core and dashboard, just served over HTTP to your browser instead of a native window, until that's fixed. SHA-256 checksums in <a href="/downloads/THEVAULT_SHA256SUMS.txt">THEVAULT_SHA256SUMS.txt</a> — verify before running. Unsigned binaries: Windows SmartScreen / macOS Gatekeeper will warn on first run.</p>
       </div>
     </div>
 
