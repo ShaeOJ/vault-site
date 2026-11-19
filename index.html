@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <title>Underground Roots Software — Mining Tools &amp; More by Shae Jones Thomson</title>
-<meta name="description" content="Free, open-source software built by Shae Jones Thomson. Mining tools: TheVault (solo/proxy Stratum app) and ZombieOS (BitAxe cluster firmware). No accounts, no telemetry, source on GitHub.">
-<meta name="keywords" content="underground roots software, open source mining tools, TheVault, ZombieOS, ClusterAxe, bitcoin mining software, bitaxe firmware">
+<meta name="description" content="Free software built by Shae Jones Thomson. Mining tools: TheVault (solo/proxy Stratum app), ZombieOS (BitAxe cluster firmware), and Anvil (multi-algo CPU/GPU miner). No accounts, no telemetry.">
+<meta name="keywords" content="underground roots software, open source mining tools, TheVault, ZombieOS, ClusterAxe, Anvil miner, bitcoin mining software, bitaxe firmware">
 <meta name="author" content="Shae Jones Thomson">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://vault.undergroundroots.ca/">
@@ -32,7 +32,7 @@
 
 <link rel="icon" type="image/x-icon" href="/assets/thevault-favicon.ico">
 <link rel="apple-touch-icon" href="/assets/thevault-logo.png">
-<link rel="stylesheet" href="/assets/style.css?v=202611182300">
+<link rel="stylesheet" href="/assets/style.css?v=202611190800">
 
 <script type="application/ld+json">
 {
@@ -56,7 +56,8 @@
       "@type": "ItemList",
       "itemListElement": [
         { "@type": "SoftwareApplication", "position": 1, "name": "TheVault", "url": "https://vault.undergroundroots.ca/thevault.html", "applicationCategory": "UtilitiesApplication" },
-        { "@type": "SoftwareApplication", "position": 2, "name": "ZombieOS", "url": "https://vault.undergroundroots.ca/zombieos.html", "applicationCategory": "UtilitiesApplication" }
+        { "@type": "SoftwareApplication", "position": 2, "name": "ZombieOS", "url": "https://vault.undergroundroots.ca/zombieos.html", "applicationCategory": "UtilitiesApplication" },
+        { "@type": "SoftwareApplication", "position": 3, "name": "Anvil", "url": "https://vault.undergroundroots.ca/anvil.html", "applicationCategory": "UtilitiesApplication" }
       ]
     }
   ]
@@ -115,7 +116,7 @@
     <img class="hero-logo" src="/assets/thevault-logo.png" alt="Underground Roots Software" width="160" height="160">
     <h1>Underground Roots Software</h1>
     <p class="tag">Free, open-source tools — built by one person, in the open, for fun and for learning.</p>
-    <p class="sub">This is a small download hub for the software I build: desktop apps and firmware, all source-available, no accounts, no telemetry, no catches. Right now that's two mining tools — a desktop Stratum server and a BitAxe cluster firmware — with more landing here over time.</p>
+    <p class="sub">This is a small download hub for the software I build: desktop apps and firmware, no accounts, no telemetry, no catches. Right now that's three mining tools — a desktop Stratum server, a BitAxe cluster firmware, and a multi-algo CPU/GPU miner — with more landing here over time.</p>
     <div class="cta">
       <a class="btn primary" href="#mining-tools">See what's here</a>
       <a class="btn" href="#downloads">Jump to downloads</a>
@@ -125,12 +126,12 @@
 
   <section id="about" class="band">
     <h2><span class="num">01</span> What's here</h2>
-    <p class="lead">Everything on this site is free, open-source, and runs on your own hardware — nothing here is a hosted service or requires an account.</p>
+    <p class="lead">Everything on this site is free to download and runs on your own hardware — nothing here is a hosted service or requires an account.</p>
     <div class="pillars">
       <div class="card">
         <div class="ico">🔓</div>
-        <h3>Source-available</h3>
-        <p>Every project links straight to its GitHub repo. Read the code, build it yourself, or just grab a pre-built binary — your call.</p>
+        <h3>Source-available, mostly</h3>
+        <p>Most projects link straight to a public GitHub repo. A couple — like Anvil, for now — ship as a checksummed binary with the source kept private; that's called out on each project's own page.</p>
       </div>
       <div class="card">
         <div class="ico">🏠</div>
@@ -183,6 +184,21 @@
             </div>
           </div>
         </div>
+
+        <div class="app-card">
+          <img class="app-logo" src="/assets/anvil-logo.png" alt="">
+          <div>
+            <div class="app-head">
+              <h3>Anvil</h3>
+              <span class="badge badge-beta">v1.0.0</span>
+              <span class="badge badge-plat">Desktop App</span>
+            </div>
+            <p class="app-tagline">Native Go multi-algo CPU/GPU miner (WPXF, VerusHash, Scrypt, SHA-256d, RandomX) built as a learning tool for how mining software works — and it mines for real while it teaches.</p>
+            <div class="app-dl">
+              <a class="btn primary" href="/anvil.html">Learn more &amp; download ↗</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -213,8 +229,13 @@
         <h3>GammaTurbo (GT801) Standalone</h3>
         <p>Dual-chip BitAxe board, running solo.</p>
       </a>
+      <a class="quick-dl" href="/downloads/Anvil-v1.0.0-windows-amd64.zip">
+        <div class="qd-app">Anvil · v1.0.0</div>
+        <h3>Windows (amd64)</h3>
+        <p>Multi-algo CPU/GPU miner + web panel.</p>
+      </a>
     </div>
-    <p class="note" style="margin-top:20px;">Need a different platform, role (master/slave), or portable build? Every option — plus SHA-256 checksums — is on each project's own page: <a href="/thevault.html">TheVault ↗</a> · <a href="/zombieos.html">ZombieOS ↗</a>.</p>
+    <p class="note" style="margin-top:20px;">Need a different platform, role (master/slave), or portable build? Every option — plus SHA-256 checksums — is on each project's own page: <a href="/thevault.html">TheVault ↗</a> · <a href="/zombieos.html">ZombieOS ↗</a> · <a href="/anvil.html">Anvil ↗</a>.</p>
   </section>
 
 </main>
@@ -227,9 +248,9 @@
   <p>Underground Roots Software — free, open-source tools built by <a href="https://undergroundroots.ca">undergroundroots</a>.</p>
   <p class="muted" id="visitCount" style="font-size:12px; margin-top:6px;">&bull;</p>
 </footer>
-<script src="/assets/bgfx.js?v=202611182300" defer></script>
-<script src="/assets/beta-notice.js?v=202611182300" defer></script>
-<script src="/assets/asicpool-notice.js?v=202611182300" defer></script>
-<script src="/assets/visit-counter.js?v=202611182300" defer></script>
+<script src="/assets/bgfx.js?v=202611190800" defer></script>
+<script src="/assets/beta-notice.js?v=202611190800" defer></script>
+<script src="/assets/asicpool-notice.js?v=202611190800" defer></script>
+<script src="/assets/visit-counter.js?v=202611190800" defer></script>
 </body>
 </html>
