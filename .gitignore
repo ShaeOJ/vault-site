@@ -1,3 +1,5 @@
 downloads/*.exe
 downloads/*.zip
 downloads/*.tar.gz
+downloads/TheVault-v*-linux-*
+downloads/TheVault-v*-headless-*

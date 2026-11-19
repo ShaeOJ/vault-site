@@ -1,5 +1,5 @@
-a9de78727bf2bbee67cbe36f8e50c24e41e1ca8ac5ed96bf1974ffc95be89323 *TheVault-v1.0.0-beta-windows-amd64-installer.exe
-9dbb34205bbd1215128fdcf5c2cdc01d0d55e4eacb4f0d17bf6f709abcd073d9 *TheVault-v1.0.0-beta-windows-amd64-portable.exe
-ae16a8e4d8ed7e9430986ea2b2287ec6d843c617d5064590f20f7de0ed9239fa *TheVault-v1.0.0-beta-linux-arm64
+64c436ff23d1f3da14922f75646bcb9ea4757364aa0b8862fd40cc736a18d23a *TheVault-v1.0.1-beta-windows-amd64-installer.exe
+7851fa4439408daaaf2b0842a45ea5662cf02726f7c1b3976cefd62426683505 *TheVault-v1.0.1-beta-windows-amd64-portable.exe
+e424142c4307173fda25a3051eccbdc1e353fdbde5a894039f5adba9174b3da3 *TheVault-v1.0.1-linux-arm64
 586b8deecd941f384164c569b8485e5c913dfa30a43ddc6eb29e300503d73dab *TheVault-v1.0.0-beta-headless-macos-amd64
 0329b05f2fbdaf6626e558d91b0839b80b602f327a193a89674bbf801eaa8b8e *TheVault-v1.0.0-beta-headless-macos-arm64
