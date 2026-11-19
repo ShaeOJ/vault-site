@@ -32,7 +32,7 @@
 
 <link rel="icon" type="image/x-icon" href="/assets/thevault-favicon.ico">
 <link rel="apple-touch-icon" href="/assets/thevault-logo.png">
-<link rel="stylesheet" href="/assets/style.css?v=202611190800">
+<link rel="stylesheet" href="/assets/style.css?v=202611191100">
 
 <script type="application/ld+json">
 {
@@ -93,6 +93,11 @@
   .quick-dl .qd-app { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
   .quick-dl h3 { margin: 0 0 4px; color: var(--amber); font-size: 16px; }
   .quick-dl p { margin: 0; font-size: 13px; color: var(--muted); }
+  @media (max-width: 480px) {
+    .app-card { grid-template-columns: 1fr; text-align: center; padding: 20px; }
+    .app-logo { margin: 0 auto; }
+    .app-head { justify-content: center; }
+  }
 </style>
 </head>
 <body>
@@ -101,6 +106,7 @@
 
 <header class="site-nav">
   <a class="brand" href="#top"><img src="/assets/thevault-logo.png" alt="" width="34" height="34"><span>UNDERGROUND ROOTS</span></a>
+  <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
   <nav>
     <a href="#about">About</a>
     <a href="#software">Software</a>
@@ -248,9 +254,10 @@
   <p>Underground Roots Software — free, open-source tools built by <a href="https://undergroundroots.ca">undergroundroots</a>.</p>
   <p class="muted" id="visitCount" style="font-size:12px; margin-top:6px;">&bull;</p>
 </footer>
-<script src="/assets/bgfx.js?v=202611190800" defer></script>
-<script src="/assets/beta-notice.js?v=202611190800" defer></script>
-<script src="/assets/asicpool-notice.js?v=202611190800" defer></script>
-<script src="/assets/visit-counter.js?v=202611190800" defer></script>
+<script src="/assets/bgfx.js?v=202611191100" defer></script>
+<script src="/assets/beta-notice.js?v=202611191100" defer></script>
+<script src="/assets/asicpool-notice.js?v=202611191100" defer></script>
+<script src="/assets/visit-counter.js?v=202611191100" defer></script>
+<script src="/assets/nav-toggle.js?v=202611191100" defer></script>
 </body>
 </html>
